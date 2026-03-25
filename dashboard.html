@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Account Manager</div>
+        <ul>
+            <li><a href="#" onclick="handleLogout()" style="color: white; text-decoration: none;">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Account Manager</h1>
+        <p>We're thrilled to have you here. Your digital life contains multiple bank accounts, and we know how
+            challenging it can be to manage them all. That's why we're here to make it easy for you.</p>
+        <h2>Your Bank Accounts <span id="alert">(Copied!)</span></h2> 
+        <table>
+            <tr>
+                <th>Bank Name</th>
+                <th>Account Number</th>
+                <th>IFSC Code</th>
+                <th>Branch Name</th>
+                <th>Delete</th>
+            </tr> 
+ 
+        </table>
+
+        <h2>Add a Bank Account</h2>
+        <form action="/submit" method="post">
+
+            <!-- Text input for bank name -->
+            <label for="bankName">Bank Name:</label>
+            <input type="text" id="bankName" name="bankName" required>
+            <br><br>
+
+            <!-- Text input for account number -->
+            <label for="accountNumber">Account Number:</label>
+            <input type="text" id="accountNumber" name="accountNumber" required>
+            <br><br>
+
+            <!-- Text input for IFSC code -->
+            <label for="ifscCode">IFSC Code:</label>
+            <input type="text" id="ifscCode" name="ifscCode" required>
+            <br><br>
+
+            <!-- Text input for branch name -->
+            <label for="branchName">Branch Name:</label>
+            <input type="text" id="branchName" name="branchName" required>
+            <br><br>
+
+            <!-- Submit button -->
+            <button class="btn" type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script>
+        // Check login status when page loads
+        checkLogin();
+    </script>
+</body>
+
+</html>
